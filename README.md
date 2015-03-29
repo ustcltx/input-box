@@ -10,7 +10,7 @@ input-box
 + zenity
 
 PS:Ubuntu默认缺xclip,xdotool
-安装xdotool: sudo apt-get install xclip xdotool
+安装xclip与xdotool: sudo apt-get install xclip xdotool
 #使用步骤
 
 1. 给脚本设置热键 <br />
