@@ -5,11 +5,12 @@ input-box
 #依赖库
 
 + xclip
-+ xdotool
++ xdotool 
 + perl
 + zenity
 
-PS: 以上库Ubuntu都默认安装了
+PS:Ubuntu默认只缺xdotool
+安装xdotool: sudo apt-get install xdotool
 #使用步骤
 
 1. 给脚本设置热键 <br />

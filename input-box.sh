@@ -30,6 +30,4 @@ which xdotool &>/dev/null || (echo '错误：xdotool 程序未安装。' >&2; ze
 
 _chat_input=$(zenity --text-info --editable --width 270 --height 320 --title "$Title")
 test -z "$_chat_input" && exit 0
-echo "$_chat_input" | perl -pe 'chomp if eof' | xclip -selection c
-
-xdotool mousemove --sync $X $Y &&  xdotool click 1 && xdotool key Control_L+v && xdotool key Return
+echo "$_chat_input" | perl -pe 'chomp if eof' | xclip -selection c && xdotool mousemove --sync $X $Y &&  xdotool click 1 && xdotool key Control_L+v && xdotool key Return
