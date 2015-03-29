@@ -16,6 +16,6 @@ PS: 以上库Ubuntu都默认安装了
 ![image](./1.png)
 2. 使用热键调出一个中文输入框 <br />
 ![image](./2.png)
-3. 当你按确定的时候，你的s输入内容已经发出
+3. 当你按确定的时候，你的输入内容已经发出
 
 PS: 本程序最新版受[minecraft-chat-helper](https://github.com/m13253/minecraft-chat-helper)启发，但适用于所有可输入的程序。
