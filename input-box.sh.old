@@ -1,0 +1,27 @@
+#!/bin/sh
+mypath=$(cd "$(dirname "$0")"; pwd)
+pidpath=$mypath/pid
+pospath=$mypath/position.txt
+
+txtpath=$mypath/test.txt
+[ ! -f $txtpath ] && touch $txtpath
+
+if [ -f $pidpath ] && mypid=`cat $pidpath` && ps -p $mypid > /dev/null
+then
+        
+	GEDWINID=`xdotool search --pid $mypid 2>&1 | tail -1` && xdotool windowactivate --sync $GEDWINID key --clearmodifiers --delay 100 ctrl+s
+	kill $mypid
+        rm $pidpath
+	cat $txtpath | perl -pe 'chomp if eof' | xclip -selection c
+        eval $(cat $pospath)
+	xdotool mousemove --sync $X $Y
+	xdotool click 1 && xdotool key ctrl+v && xdotool key KP_Enter
+	exit
+fi
+
+echo > $txtpath
+$(xdotool getmouselocation --shell) > $pospath
+gedit --geometry 200x200-0-0 -s $txtpath &
+echo "$!"  > $pidpath
+exit
+
